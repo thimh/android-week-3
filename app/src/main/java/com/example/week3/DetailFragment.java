@@ -12,8 +12,9 @@ import android.widget.TextView;
 public class DetailFragment extends Fragment {
     public View rootView;
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 //        super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.detail_fragment, container, false);
@@ -26,6 +27,6 @@ public class DetailFragment extends Fragment {
         TextView textView = getView().findViewById(R.id.detailText);
         ImageView imageView = getView().findViewById(R.id.detailImage);
         textView.setText(pokemon.name);
-        imageView.setImageResource(/*getResources().getIdentifier(*/pokemon.image/*pokemonName, "drawable", "com.example.week3")*/);
+        imageView.setImageResource(pokemon.image/*getResources().getIdentifier(pokemonName, "drawable", "com.example.week3")*/);
     }
 }
